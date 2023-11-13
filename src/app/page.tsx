@@ -2,180 +2,211 @@ import Image from 'next/image'
 import logo from "@/assets/logo.png"
 import hero from "@/assets/hero.png"
 import Link from 'next/link'
+import { Github, Mail, Phone, } from 'lucide-react'
 
 export const metadata = { title: "EcoTroca - Sustentabilidade na Prática" }
 
 export default function Home() {
   return (
     <>
-      <div className="bg-green-800 text-white text-sm py-4 flex justify-between pl-10 pr-8" >
-        <span>Wesley.mr2000@gmail.com <span className='ml-4'>(71)99179-7751</span></span>
-        <span>https://github.com/Wr1856</span>
-      </div>
-      <div className="bg-green-600 h-40 flex items-center" >
-        <Image src={logo} alt='logo' width={140} height={140} />
-        <span className='text-4xl text-white ml-8'>EcoTroca - Sustentabilidade na Prática</span>
-        <div className='flex ml-auto space-x-20 uppercase text-white text-lg pr-14'>
-          <a href="#">Inicio</a>
-          <a href="#posicao">Posição</a>
-          <a href="#instrucao">Instruções</a>
-          <a href="#">Contato</a>
-          <Link href="/entrar">Entrar</Link>
-        </div>
-      </div>
-      <div className=' h-full w-full'>
-        <div className='h-[calc(100vh_-_212px)]'>
-          <Image className='object-contain' src={hero} alt='hero' height={800} />
-          <h1 className='text-[#80BB2A] text-7xl mt-10 ml-8'>Bem-Vindo</h1>
-        </div>
-        <div className="grid grid-cols-2 gap-x-32 pr-10 h-screen" id='posicao'>
-          <span className='text-[#80BB2A] text-lg mt-20 ml-8 object-left'>
-            <p>
-              Descrição:
-              Bem-vindo ao EcoTroca, o seu portal dedicado à promoção da sustentabilidade e à recompensa das boas práticas ambientais. Aqui, acreditamos que cada pequena ação pode fazer a diferença no nosso planeta, e é por isso que criamos uma plataforma inovadora que incentiva a troca de pontos por objetos sustentáveis em troca de prêmios básicos.<br></br>
-            </p><p>
-              Objetivos:
-              Sustentabilidade na Prática: No EcoTroca, encorajamos os usuários a adotarem um estilo de vida mais sustentável, promovendo a reutilização, a reciclagem e a redução do consumo de recursos naturais.
-            </p><p>
-              Troque por Pontos: Ao realizar ações sustentáveis, como reciclar, economizar energia ou utilizar meios de transporte ecológicos, você acumula pontos que podem ser trocados por produtos sustentáveis.<br></br>
-            </p><p>
-              Prêmios Básicos: Oferecemos uma ampla gama de prêmios básicos que atendem às necessidades diárias, como produtos de higiene pessoal, alimentos orgânicos, materiais de escritório e muito mais. Assim, você pode ser recompensado enquanto contribui para um mundo mais verde.
-              Comunidade Engajada: Faça parte de uma comunidade ativa de pessoas comprometidas com a sustentabilidade. Compartilhe dicas, histórias inspiradoras e ideias para promover um estilo de vida mais ecológico.<br></br>
-            </p><p>
-              Impacto Positivo: Cada ação sustentável que você realiza no EcoTroca contribui para a preservação do meio ambiente e a redução da pegada de carbono global. Juntos, podemos criar um impacto positivo no mundo.
-              Junte-se ao EcoTroca e faça parte dessa jornada emocionante em direção a um planeta mais sustentável. Troque seus pontos por prêmios básicos e seja parte da solução para um futuro mais verde!<br></br>
-            </p>
-          </span>
-          <div className='bg-[#7AB730] p-4 rounded-lg text-green-100'>
-            <span className='text-center block text-3xl'>POSIÇÕES</span>
-            <ul className='list-disc text-3xl px-14 space-y-5 mt-20'>
-              <li>
-                <div className='flex justify-between'>
-                  <span>joao</span>
-                  <span>100 - pontos</span>
-                </div>
-              </li>
-              <li>
-                <div className='flex justify-between'>
-                  <span>joao</span>
-                  <span>100 - pontos</span>
-                </div>
-              </li>
-              <li>
-                <div className='flex justify-between'>
-                  <span>joao</span>
-                  <span>100 - pontos</span>
-                </div>
-              </li>
-              <li>
-                <div className='flex justify-between'>
-                  <span>joao</span>
-                  <span>100 - pontos</span>
-                </div>
-              </li>
-              <li>
-                <div className='flex justify-between'>
-                  <span>joao</span>
-                  <span>100 - pontos</span>
-                </div>
-              </li>
-              <li>
-                <div className='flex justify-between'>
-                  <span>joao</span>
-                  <span>100 - pontos</span>
-                </div>
-              </li>
-              <li>
-                <div className='flex justify-between'>
-                  <span>joao</span>
-                  <span>100 - pontos</span>
-                </div>
-              </li>
-              <li>
-                <div className='flex justify-between'>
-                  <span>joao</span>
-                  <span>100 - pontos</span>
-                </div>
-              </li>
-              <li>
-                <div className='flex justify-between'>
-                  <span>joao</span>
-                  <span>100 - pontos</span>
-                </div>
-              </li>
-              <li>
-                <div className='flex justify-between'>
-                  <span>joao</span>
-                  <span>100 - pontos</span>
-                </div>
-              </li>
-            </ul>
-
+      <div>
+        <div className="text-green-500 text-xs font-semibold py-2 flex h-8 pl-10 bg-green-50 pr-8" >
+          <div className='flex'>
+            <Phone size={16} />
+            <span className='ml-1'>(71) 99179-7751 </span>
+          </div>
+          <div className='flex ml-4'>
+            <Mail size={16} />
+            <span className='ml-1'>Wesley.mr2000@gmail.com</span>
+          </div>
+          <div className='flex ml-auto'>
+            <Github size={16} />
+            <span>https://github.com/Wr1856</span>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-x-32 pr-10 mt-20 h-screen" id='instrucao' >
-          <div className='pl-10 text-[#80BB2A] ' >
-            TROCA DE PRODUTOS POR PONTOS:<br /><br />
 
-            1. Cadastro no EcoTroca:<br />
-            - Crie uma conta no EcoTroca, clicando AQUI!<br />
-            - Entre nela para acessar o site por completo.<br /><br />
-
-            2. Explorando o Catálogo:<br />
-            - Navegue pelo catálogo de produtos com selo verde disponiveis que você pode cadastrar e receber seus pontos para troca.<br /><br />
-
-            3. Escolha do Produto:<br />
-            - Selecione o produtos que deseja cadastrar em troca de seus pontos.<br />
-            - Leia as informações sobre o produto e verifique a quantidade de pontos que receberá.<br /><br />
-
-            4. Acúmulo de Pontos:<br />
-            - Realize o cadastro de produtos que contenham o selo verde.<br />
-            - Acompanhe o saldo de pontos em seu perfil.<br /><br />
-
-
-            5. Recebimento do Ponto:<br />
-            - Após a confirmação, aguarde o envio do pontos para o seu perfil.<br />
-          </div>
-          <div className='pl-10 text-[#80BB2A] ' >
-            TROCA DE PONTOS POR BENEFICIOS:<br /><br />
-
-            1. Acúmulo Contínuo de Pontos:<br />
-            - Continue adiquirindo produtos com selo verde e cadastrando eles no site para acumular mais pontos ao longo do tempo.<br /><br />
-
-            2. Explorando Benefícios:<br />
-            - Visite a seção de benefícios e descubra as opções disponíveis para resgate.<br /><br />
-
-            3. Escolha do Benefício:<br />
-            - Escolha o benefício que deseja resgatar. Pode ser descontos em estabelecimentos parceiros, acesso a eventos sustentáveis ou outras oportunidades exclusivas.<br /><br />
-
-            4. Confirmação do Resgate:<br />
-            - Confirme o resgate do benefício, garantindo que você atende aos requisitos necessários.<br /><br />
-
-            5. Aproveite os Benefícios:<br />
-            - Desfrute dos benefícios resgatados, contribuindo para um estilo de vida mais sustentável e acessando oportunidades exclusivas na comunidade EcoTroca.<br /><br />
+        <div className="bg-white text-green-500 h-14 w-full flex items-center"  >
+          <Image src={logo} alt='logo' width={40} height={40} className='ml-10' />
+          <span className='text-lg ml-2'>EcoTroca</span>
+          <div className='flex ml-auto space-x-20 uppercase  text-base pr-14'>
+            <a href="#posicao">Posições</a>
+            <a href="#instrucao">Instruções</a>
+            <a href="#contato">Contato</a>
+            <Link href="/entrar">Entrar</Link>
           </div>
         </div>
-      </div>
+        <div className=' h-full w-full'>
+          <div className='h-[calc(100vh_-_212px)]'>
+            <Image className='object-contain' src={hero} alt='hero' height={800} />
+            <h1 className='text-[#80BB2A] text-7xl mt-10 ml-8'>Bem-Vindo</h1>
+          </div>
+          <div className="grid grid-cols-2 gap-x-32 pr-10 h-screen" id='posicao'>
+            <span className='text-[#80BB2A] text-base mt-20 ml-8 object-left'>
 
-      <footer className='bg-[#1A884D] text-white p-10 rounded-t-lg flex justify-between items-center' >
-        <div className='flex items-center '>
-          <Image className='shrink-0' src={logo} alt='logo' width={140} height={140} />
-          <div className='space-y-10 flex flex-col items-center m-6'>
-          <span className='text-2xl'>EcoTroca - Sustentabilidade na Prática</span>
-          <span className='text-base text-center'>portal dedicado à promoção da sustentabilidade e à<br/> recompensa das boas práticas ambientais.</span>
-          <a className='font-medium text-xl' href='#'>INICIO</a>
+              <span className='font-semibold text-2xl'>Descrição:</span><br /><span className=' text-black'>
+              Bem-vindo ao EcoTroca, o seu site dedicado à promoção da sustentabilidade e à recompensa das boas práticas ambientais.
+              Aqui, acreditamos que cada pequena ação pode fazer a diferença no nosso planeta, e é por isso que criamos uma plataforma inovadora que
+              incentiva o cadastro de produtos com selo verde por pontos em troca de prêmios básicos.<br /><br /></span>
+
+              <span className='font-semibold text-2xl'>Objetivos:</span><br /><span className=' text-black'>
+              Sustentabilidade na Prática: No EcoTroca, encorajamos os usuários a adotarem um estilo de vida mais sustentável,
+              promovendo a compra de produtos sustentáveis.<br /><br /></span>
+
+
+              <span className='font-semibold text-2xl'>Troque por Pontos:</span><br /><span className=' text-black'>
+              Ao adquirir produto com o selo verde, basta procura-lo e cadastra-lo em nosso sistema para receber os pontos que logo poderão ser trocados por prêmios<br /><br /></span>
+
+
+              <span className='font-semibold text-2xl'>Prêmios Básicos:</span><br /><span className=' text-black'>
+              Oferecemos uma gama de prêmios básicos que atendem às necessidades diárias, como produtos de higiene pessoal, materiais de escritório e muito mais. Assim, você pode ser recompensado enquanto contribui para um mundo mais verde.<br /><br /></span>
+
+
+              <span className='font-semibold text-2xl'>Impacto Positivo:</span><br /><span className=' text-black'>
+              A ação sustentável que você realiza no EcoTroca contribui para a preservação do meio ambiente diminuindo os produtos testados em animais e etc. Juntos, podemos criar um impacto positivo no mundo.<br /><br /></span>
+
+              <br /><br /><br /><br />
+              <span className='font-semibold text-3xl text-justify flex'>Junte-se ao EcoTroca e faça parte dessa jornada emocionante em direção a um planeta mais sustentável. Troque seus pontos por prêmios básicos e seja parte da solução para um futuro mais verde!</span>
+            </span>
+            <div className='bg-[#7AB730] p-4 rounded-lg text-green-50'>
+              <span className='text-center block text-7xl'>POSIÇÕES</span>
+              <ul className='list-disc text-lg px-14 space-y-10 mt-20'>
+                <li>
+                  <div className='flex justify-between'>
+                    <span>Nome e Sobrenome Teste</span>
+                    <span>100 - pontos</span>
+                  </div>
+                </li>
+                <li>
+                  <div className='flex justify-between'>
+                    <span>Nome e Sobrenome Teste</span>
+                    <span>100 - pontos</span>
+                  </div>
+                </li>
+                <li>
+                  <div className='flex justify-between'>
+                    <span>Nome e Sobrenome Teste</span>
+                    <span>100 - pontos</span>
+                  </div>
+                </li>
+                <li>
+                  <div className='flex justify-between'>
+                    <span>Nome e Sobrenome Teste</span>
+                    <span>100 - pontos</span>
+                  </div>
+                </li>
+                <li>
+                  <div className='flex justify-between'>
+                    <span>Nome e Sobrenome Teste</span>
+                    <span>100 - pontos</span>
+                  </div>
+                </li>
+                <li>
+                  <div className='flex justify-between'>
+                    <span>Nome e Sobrenome Teste</span>
+                    <span>100 - pontos</span>
+                  </div>
+                </li>
+                <li>
+                  <div className='flex justify-between'>
+                    <span>Nome e Sobrenome Teste</span>
+                    <span>100 - pontos</span>
+                  </div>
+                </li>
+                <li>
+                  <div className='flex justify-between'>
+                    <span>Nome e Sobrenome Teste</span>
+                    <span>100 - pontos</span>
+                  </div>
+                </li>
+                <li>
+                  <div className='flex justify-between'>
+                    <span>Nome e Sobrenome Teste</span>
+                    <span>100 - pontos</span>
+                  </div>
+                </li>
+                <li>
+                  <div className='flex justify-between'>
+                    <span>Nome e Sobrenome Teste</span>
+                    <span>100 - pontos</span>
+                  </div>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-x-32 pr-10 mt-20 h-[800px]" id='instrucao' >
+            <div className='pl-10 text-[#80BB2A] text-base' >
+              TROCA DE PRODUTOS POR PONTOS:<br /><br />
+
+              <span className='font-semibold'>1. Cadastro no EcoTroca:</span><br /><span className='text-black'>
+              - Crie uma conta no EcoTroca, clicando <Link href='/entrar'>AQUI!</Link><br />
+              - Entre nela para acessar o catálogo.<br /><br /></span>
+
+              <span className='font-semibold'>2. Explorando o Catálogo:</span><br /><span className='text-black'>
+              - Navegue pelo catálogo de produtos com selo verde disponíveis que você pode cadastrar e receber seus pontos para troca.<br /><br /></span>
+
+              <span className='font-semibold'>3. Escolha do Produto:</span><br /><span className='text-black'>
+              - Selecione o produtos que deseja cadastrar em troca de seus pontos.<br />
+              - Leia as informações sobre o produto e verifique a quantidade de pontos que receberá.<br /><br /></span>
+
+              <span className='font-semibold'>4. Acúmulo de Pontos:</span><br /><span className='text-black'>
+              - Realize o cadastro de produtos que contenham o selo verde.<br />
+              - Acompanhe o saldo de pontos em seu perfil.<br /><br /></span>
+
+              <span className='font-semibold'>5. Recebimento do Ponto:</span><br /><span className='text-black'>
+              - Após a confirmação, aguarde o envio do pontos para o seu perfil.<br /></span>
+            </div>
+            <div className='pl-10 text-[#80BB2A] text-base' >
+              TROCA DE PONTOS POR BENEFÍCIOS:<br /><br />
+
+              <span className='font-semibold'>1. Acúmulo Contínuo de Pontos:</span><br /><span className='text-black'>
+              - Continue adquirindo produtos com selo verde e cadastrando eles no site para acumular mais pontos ao longo do tempo.<br /><br /></span>
+
+              <span className='font-semibold'>2. Explorando Benefícios:</span><br /><span className='text-black'>
+              - Visite a seção de benefícios e descubra as opções disponíveis para resgate.<br /><br /></span>
+
+              <span className='font-semibold'>3. Escolha do Benefício:</span><br /><span className='text-black'>
+              - Escolha o benefício que deseja resgatar.<br /><br /></span>
+
+              <span className='font-semibold'>4. Confirmação do Resgate:</span><br /><span className='text-black'>
+              - Confirme o resgate do benefício, garantindo que você atende aos requisitos necessários.<br /><br /></span>
+
+              <span className='font-semibold'>5. Aproveite os Benefícios:</span><br /><span className='text-black'>
+              - Desfrute dos benefícios resgatados, contribuindo para um estilo de vida mais sustentável e acessando oportunidades exclusivas na comunidade EcoTroca.<br /><br /></span>
+            </div>
+          </div>
         </div>
 
-      </div>
-        <div className='text-2xl'>
-            Telefone:    (71)99179-7751<br/><br/>
-
-            Email:          Wesley.mr2000@gmail.com<br/><br/>
-
-            Portfólio:    https://github.com/Wr1856
+        <footer className="bg-green-500 p-20 pb-0 text-white mt-auto flex flex-col justify-between">
+        <div className="flex items-center justify-between">
+          <div className="">
+            <Image src={logo} alt="logo" width={40} height={39} className="mb-5"/>
+            <span className="text-lg font-semibold w-[407px] flex">
+            EcoTroca - Sustentabilidade na Pratica
+            Portal dedicado a promoção da sustentabilidade e a
+            recompensa das boas praticas ambientais.
+            </span>
+          </div>
+          <div className="grid grid-cols-2 gap-8">
+            <div className="flex flex-col">
+              <span className="text-white/70 ">Email:</span>
+              <span>Wesley.mr2000@gmail.com</span>
+            </div>
+            <div>
+              <span className="text-white/70 block">Telefone:</span>
+              <span>(71) 99179-7751</span>
+            </div>
+            <div className=" flex flex-col">
+              <span className="text-white/80">Portfólio:</span>
+              <a href="https://github.com/Wr1856" target="_blank">https://github.com/Wr1856</a>
+            </div>
+          </div>
         </div>
-        
+        <div className="border-t border-dashed border-green-100 flex items-center justify-center py-6 text-sm mt-14">
+          <span>© 2023 EcoTroca Inc. Todos direitos reservado.</span>
+        </div>
       </footer>
+      </div>
     </>
   )
 }
