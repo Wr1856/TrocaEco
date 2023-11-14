@@ -26,7 +26,7 @@ export default function Layout({ children }: LayoutProps) {
           </div>
           <div className="flex ml-auto">
             <Github size={16} />
-            <span>https://github.com/Wr1856</span>
+            <a href="https://github.com/Wr1856" target="_blank">https://github.com/Wr1856</a>
           </div>
         </div>
         <div className="w-full flex items-center justify-between py-2.5 px-10 border-y border-zinc-200">

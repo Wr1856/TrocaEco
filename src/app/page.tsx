@@ -21,7 +21,7 @@ export default function Home() {
           </div>
           <div className='flex ml-auto'>
             <Github size={16} />
-            <span>https://github.com/Wr1856</span>
+            <a href='https://github.com/Wr1856' target='_blank'>https://github.com/Wr1856</a>
           </div>
         </div>
 
@@ -140,10 +140,10 @@ export default function Home() {
 
               <span className='font-semibold'>1. Cadastro no EcoTroca:</span><br /><span className='text-black'>
               - Crie uma conta no EcoTroca, clicando <Link href='/entrar'>AQUI!</Link><br />
-              - Entre nela para acessar o catálogo.<br /><br /></span>
+              - Entre nela para acessar a pagina principal.<br /><br /></span>
 
-              <span className='font-semibold'>2. Explorando o Catálogo:</span><br /><span className='text-black'>
-              - Navegue pelo catálogo de produtos com selo verde disponíveis que você pode cadastrar e receber seus pontos para troca.<br /><br /></span>
+              <span className='font-semibold'>2. Explorando a pagina principal:</span><br /><span className='text-black'>
+              - Navegue pelo pagina principal de produtos e benefícios disponíveis e utilizar pontos para troca.<br /><br /></span>
 
               <span className='font-semibold'>3. Escolha do Produto:</span><br /><span className='text-black'>
               - Selecione o produtos que deseja cadastrar em troca de seus pontos.<br />
