@@ -13,7 +13,6 @@ describe('testando componente de link', () => {
     const link=screen.getByText('testando')
     expect(link.textContent).toBe('testando')
   })
-
 });
 
   describe('teste de funcionalidade do link', ()=>{
