@@ -13,7 +13,7 @@ export function LinkCustomizavel ({ children, ...props }: LinkCustomizavelProps)
   const ativo = pathname === linkPath
 
   return(
-    <Link aria-active={ativo} className="aria-[active=true]:text-green-500 aria-[active=true]:font-bold" {...props}>
+    <Link data-active={ativo} className="data-[active=true]:text-green-500 data-[active=true]:font-bold" {...props}>
       {children}
     </Link>
   )

@@ -1,17 +1,17 @@
 import { ReactNode } from "react";
-import { Phone, Github, Mail, LogOut } from "lucide-react";
+import { Phone, Github, Mail } from "lucide-react";
 import Image from 'next/image'
-import Link from 'next/link'
 
 import logo from '@/assets/logo.png'
 import { LinkCustomizavel } from "@/components/link";
+import { LogoutButton } from "@/components/logout-button";
+
 
 interface LayoutProps {
   children?: ReactNode;
 }
 
 export default function Layout({ children }: LayoutProps) {
-  
   return (
     <main className="w-full h-screen flex flex-col">
       <header className="bg-white">
@@ -42,10 +42,7 @@ export default function Layout({ children }: LayoutProps) {
               Produtos
             </LinkCustomizavel>
           </div>
-          <button className="flex item-center gap-2 text-zinc-500">
-            Sair
-            <LogOut />
-          </button>
+          <LogoutButton />
         </div>
       </header>
       {children}

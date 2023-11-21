@@ -9,3 +9,54 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id          String @id @default(uuid())
+  name        String
+  phoneNumber String
+  address     String
+  email       String @unique
+  password    String
+
+  products UserProduct[]
+  benefits Benefit[]
+  points   Points[]
+
+  @@map("users")
+}
+
+model Product {
+  id     String @id @default(uuid())
+  name   String
+  points Int
+
+  userProducts UserProduct[]
+
+  @@map("products")
+}
+
+model UserProduct {
+  id       String    @id @default(uuid())
+  products Product[]
+  owner    User      @relation(fields: [ownerId], references: [id])
+  ownerId  String
+
+  @@map("users_products")
+}
+
+model Benefit {
+  id      String  @id @default(uuid())
+  name    String
+  points  Int
+  owner   User?   @relation(fields: [ownerId], references: [id])
+  ownerId String?
+
+  @@map("benefits")
+}
+
+model Points {
+  id      String  @id @default(uuid())
+  owner   User?   @relation(fields: [ownerId], references: [id])
+  ownerId String? @unique
+  amount  Int
+}
