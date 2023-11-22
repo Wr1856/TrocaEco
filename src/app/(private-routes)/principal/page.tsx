@@ -11,6 +11,10 @@ interface Benefits {
   points: number,
 }
 
+export const metadata = {
+  title: 'EcoTroca | Area do Usuário'
+}
+
 export default async function Inicio() {
   const session = await getServerSession(nextAuthOptions)
   const { data } = await api.get('/user/me', {

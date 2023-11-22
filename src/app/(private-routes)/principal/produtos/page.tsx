@@ -1,9 +1,8 @@
 import { Search } from 'lucide-react'
+import { getServerSession } from 'next-auth'
 
-import { useState } from 'react'
 import { api } from '@/lib/api'
 import { DialogProducts } from '@/components/dialog-products'
-import { getServerSession } from 'next-auth'
 import { nextAuthOptions } from '@/app/api/auth/[...nextauth]/route'
 import { UserCard } from '@/components/user-card'
 
@@ -11,6 +10,10 @@ interface Benefits {
   id: string
   name: string
   points: number,
+}
+
+export const metadata = {
+  title: 'EcoTroca | Cadastro produtos'
 }
 
 export default async function Produtos() {

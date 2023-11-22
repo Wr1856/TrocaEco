@@ -6,6 +6,7 @@ import { redirect } from "next/navigation"
 interface PrivateLayoutProps {
   children?: ReactNode
 }
+export const metadata = { title: "Login | EcoTroca" };
 
 export default async function PrivateLayout ({ children }: PrivateLayoutProps) {
   const session = await getServerSession(nextAuthOptions)

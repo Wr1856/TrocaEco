@@ -16,8 +16,6 @@ import { api } from "@/lib/api";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
-const metadata = { title: "login" };
-
 export default function Entrar() {
   const [abrir, abrirPara] = useState(false);
   const router = useRouter() 
