@@ -14,15 +14,15 @@ export async function GET (req: NextRequest) {
           ownerId: userExists.id
         },
         select: {
-          products: true
+          product: true
         }
       })
-      const newProducts = products.map(product => {
-        return {
-          ...product.products[0]
-        }
-      })
-      return NextResponse.json(newProducts)
+      // const newProducts = products.map(product => {
+      //   return {
+      //     ...product.products[0]
+      //   }
+      // })
+      return NextResponse.json(products)
     }
     throw new Error('Usuário invalido')
   }
@@ -40,14 +40,10 @@ export async function POST (req: NextRequest) {
       const product = await prisma.userProduct.create({
         data: {
           ownerId: userExists.id,
-          products: {
-            connect: {
-              id: data.productId
-            }
-          },
+          productId: data.productId
         },
-        include: {
-          products: true
+        select: {
+          product: true
         }
       })
       // const userProducts = await prisma.userProduct.findMany({
@@ -66,15 +62,15 @@ export async function POST (req: NextRequest) {
       //   acc += cur.products[0].points
       //   return acc
       // }, 0)
-      const pointsUser = await prisma.points.findUnique({ where: { ownerId: userExists.id }}) 
-      await prisma.points.update({
-        where: { ownerId: userExists.id },
-        data: {
-          amount: product.products[0].points + pointsUser?.amount!
-        }
-      })
+      // const pointsUser = await prisma.points.findUnique({ where: { ownerId: userExists.id }}) 
+      // await prisma.points.update({
+      //   where: { ownerId: userExists.id },
+      //   data: {
+      //     amount: product.products[0].points + pointsUser?.amount!
+      //   }
+      // })
 
-      return NextResponse.json({ pointsUser })
+      return NextResponse.json({ product })
     }
     throw new Error('Usuário invalido')
   }

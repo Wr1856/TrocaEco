@@ -1,7 +1,25 @@
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
+import bcrypt from 'bcrypt'
+import { faker } from '@faker-js/faker'
+
 async function main () {
+  const password = await bcrypt.hash('123456', 12)
+  await prisma.user.create({
+    data: {
+      name: faker.person.fullName(),
+      address: faker.location.streetAddress(),
+      email: 'email@email.com',
+      phoneNumber: faker.phone.number(),
+      password,
+      points: {
+        create: {
+          amount: 0
+        }
+      }
+    }
+  })
   const benefits = [
     ['Copo Sustentável para Viagem' ,100],
     ['Kit de Talheres Eco-Friendly' ,150],

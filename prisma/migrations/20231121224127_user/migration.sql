@@ -5,8 +5,7 @@ CREATE TABLE "users" (
     "phoneNumber" TEXT NOT NULL,
     "address" TEXT NOT NULL,
     "email" TEXT NOT NULL,
-    "password" TEXT NOT NULL,
-    "points" INTEGER NOT NULL DEFAULT 0
+    "password" TEXT NOT NULL
 );
 
 -- CreateTable
@@ -18,8 +17,11 @@ CREATE TABLE "products" (
 
 -- CreateTable
 CREATE TABLE "users_products" (
-    "id" TEXT NOT NULL PRIMARY KEY,
     "ownerId" TEXT NOT NULL,
+    "productId" TEXT NOT NULL,
+
+    PRIMARY KEY ("ownerId", "productId"),
+    CONSTRAINT "users_products_productId_fkey" FOREIGN KEY ("productId") REFERENCES "products" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT "users_products_ownerId_fkey" FOREIGN KEY ("ownerId") REFERENCES "users" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
@@ -27,9 +29,17 @@ CREATE TABLE "users_products" (
 CREATE TABLE "benefits" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "name" TEXT NOT NULL,
-    "points" INTEGER NOT NULL,
-    "ownerId" TEXT,
-    CONSTRAINT "benefits_ownerId_fkey" FOREIGN KEY ("ownerId") REFERENCES "users" ("id") ON DELETE SET NULL ON UPDATE CASCADE
+    "points" INTEGER NOT NULL
+);
+
+-- CreateTable
+CREATE TABLE "UserBenefits" (
+    "benefitId" TEXT NOT NULL,
+    "ownerId" TEXT NOT NULL,
+
+    PRIMARY KEY ("benefitId", "ownerId"),
+    CONSTRAINT "UserBenefits_benefitId_fkey" FOREIGN KEY ("benefitId") REFERENCES "benefits" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT "UserBenefits_ownerId_fkey" FOREIGN KEY ("ownerId") REFERENCES "users" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- CreateTable
@@ -40,19 +50,8 @@ CREATE TABLE "Points" (
     CONSTRAINT "Points_ownerId_fkey" FOREIGN KEY ("ownerId") REFERENCES "users" ("id") ON DELETE SET NULL ON UPDATE CASCADE
 );
 
--- CreateTable
-CREATE TABLE "_ProductToUserProduct" (
-    "A" TEXT NOT NULL,
-    "B" TEXT NOT NULL,
-    CONSTRAINT "_ProductToUserProduct_A_fkey" FOREIGN KEY ("A") REFERENCES "products" ("id") ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT "_ProductToUserProduct_B_fkey" FOREIGN KEY ("B") REFERENCES "users_products" ("id") ON DELETE CASCADE ON UPDATE CASCADE
-);
-
 -- CreateIndex
 CREATE UNIQUE INDEX "users_email_key" ON "users"("email");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "_ProductToUserProduct_AB_unique" ON "_ProductToUserProduct"("A", "B");
-
--- CreateIndex
-CREATE INDEX "_ProductToUserProduct_B_index" ON "_ProductToUserProduct"("B");
+CREATE UNIQUE INDEX "Points_ownerId_key" ON "Points"("ownerId");

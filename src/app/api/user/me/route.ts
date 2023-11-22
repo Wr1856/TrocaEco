@@ -24,7 +24,7 @@ export async function GET (req: NextRequest) {
         email: userExists.email,
         address: userExists.address,
         phoneNumber: userExists.phoneNumber,
-        points: userExists.points[0].amount
+        points: userExists.points?.amount
       })
     }
     throw new Error('Usuário invalido')
