@@ -27,7 +27,7 @@ export default async function Produtos() {
   
   return (
     <main className='px-56 pb-24'>
-      <div className=" grid grid-cols-[auto_1fr] w-80 pt-20 gap-x-3">
+      <div className=" grid grid-cols-[auto_1fr] w-80 gap-x-3">
         <UserCard />
       </div>
       <div className='flex justify-between p-10'>
@@ -36,7 +36,7 @@ export default async function Produtos() {
             <span className='text-base font-semibold text-gray-500 pb-2'>Lista de produtos disponíveis</span>
             <span className='text-sm font-medium text-gray-300 pb-2'>Total de produtos disponíveis: <span className='text-sm text-gray-500'>{userProducts.length}</span></span>
           </div>
-          <div className='h-96 overflow-y-scroll relative'>
+          <div className='h-96 overflow-y-scroll relative scrollbar-thin scrollbar-thumb-zinc-400 scrollbar-track-gray-200'>
           {userProducts.length ? (
               <table className='justify-between [&>*>tr]:border-y [&>*>tr]:border-y-gray-200 [&>*>:last-of-type]:border-none text-sm font-bold text-gray-500 w-full'>
                 <thead>
@@ -75,7 +75,7 @@ export default async function Produtos() {
                 <Search />
               </button>
             </form>
-            <div className='h-96 overflow-y-scroll'>
+            <div className='h-96 overflow-y-scroll scrollbar-thin scrollbar-thumb-zinc-400 scrollbar-track-gray-200'>
               <table className='[&>*>tr]:border-y [&>*>tr]:border-y-gray-200 [&>*>:last-of-type]:border-none [&>*>tr]:text-xs text-gray-500 w-full'>
                   <thead>
                     <tr className='h-16'>

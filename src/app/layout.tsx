@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className='scrollbar-thin scrollbar-thumb-green-700 scrollbar-track-green-100'>
       <body className={`${inter.className} bg-blue-50`}>
         <NextAuthSessionProvider>
           {children}

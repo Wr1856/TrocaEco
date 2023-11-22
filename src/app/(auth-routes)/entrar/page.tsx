@@ -15,9 +15,11 @@ import Link from "next/link";
 import { api } from "@/lib/api";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { AsyncButton } from "@/components/async-button";
 
 export default function Entrar() {
   const [abrir, abrirPara] = useState(false);
+  const [isLoading, setIsLoading] = useState(false)
   const router = useRouter() 
 
   async function criarConta (event: FormEvent) {
@@ -26,12 +28,12 @@ export default function Entrar() {
     try {
       delete data.passwordConfirm
      const response = await api.post('/user/criar', data)
-     console.log(response)
     } catch (error) {
       alert(error)
     }
   }
   async function login (event: FormEvent) {
+    setIsLoading(true)
     event.preventDefault()
     const { email, password } = Object.fromEntries(new FormData(event.target as any))
 
@@ -45,6 +47,7 @@ export default function Entrar() {
       console.log(response)
       return
     }
+    setIsLoading(false)
 
     router.replace('/principal')
   }
@@ -90,9 +93,11 @@ export default function Entrar() {
                 />
               </div>
 
-              <button className="rounded-full px-5 py-2 text-white bg-green-700 w-80">
-                ENTRAR
-              </button>
+              <AsyncButton
+                isLoading={isLoading}
+                type="primary">
+                  ENTRAR
+              </AsyncButton>
             </form>
             <div className="flex flex-col bg-green-700 text-white justify-center items-center gap-5 flex-1">
               <h1 className="text-4xl font-semibold">Não tem uma conta?</h1>

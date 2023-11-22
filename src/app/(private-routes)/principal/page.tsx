@@ -5,7 +5,7 @@ import { api } from '@/lib/api'
 import { getServerSession } from 'next-auth'
 import { nextAuthOptions } from '@/app/api/auth/[...nextauth]/route'
 
-interface Benefits {
+export interface Benefits {
   id: string
   name: string
   points: number,
@@ -32,12 +32,12 @@ export default async function Inicio() {
     <main className='px-56 pb-24'>
       <UserCard />
       <div className='flex justify-between p-10'>
-        <div className='bg-white mt-16 w-[447px] rounded-2xl block py-px overflow-hidden'>
+        <div className='bg-white mt-16 w-[447px] rounded-2xl block py-px pb-8 overflow-hidden'>
           <div className='flex flex-col pl-6 pt-4'>
             <span className='text-base font-semibold text-gray-500 pb-2'>Histórico de cadastramento</span>
             <span className='text-sm font-medium text-gray-300 pb-2'>Total de produtos <span className='text-gray-500 font-medium'>{products.length}</span> voce tem <span className='text-gray-500 font-medium'>{data.points}</span> de pontos</span>
           </div>
-          <div className='h-96 overflow-y-scroll relative'>
+          <div className='h-96 overflow-y-scroll relative scrollbar-thin scrollbar-thumb-zinc-400 scrollbar-track-gray-200'>
             {products.length ? (
               <table className='justify-between [&>*>tr]:border-y [&>*>tr]:border-y-gray-200 [&>*>:last-of-type]:border-none text-sm font-bold text-gray-500 w-full'>
                 <thead>
@@ -62,7 +62,7 @@ export default async function Inicio() {
             )}
           </div>
         </div>
-        <div className='bg-white mt-16 w-[447px]'>
+        <div className='bg-white mt-16 w-[447px] rounded-2xl block py-px  pb-8 overflow-hidden'>
           <div>
             <span className='w-full text-base font-semibold text-gray-500 p-4 block'>Resgate de benefício</span>
             <form className="flex items-center gap-4 px-4">
@@ -76,7 +76,7 @@ export default async function Inicio() {
                 <Search />
               </button>
             </form>
-            <div className='h-96 overflow-y-scroll'>
+            <div className='h-96 overflow-y-scroll scrollbar-thin scrollbar-thumb-zinc-400 scrollbar-track-gray-200'>
             <table className='[&>*>tr]:border-y [&>*>tr]:border-y-gray-200 [&>*>:last-of-type]:border-none [&>*>tr]:text-xs text-gray-500 w-full'>
                   <thead>
                     <tr className='h-16'>
@@ -91,7 +91,7 @@ export default async function Inicio() {
                         <td>{benefit.points}</td>
                         <td>{benefit.name}</td>
                         <td className='text-green-400 flex items-center justify-center'>
-                          <DialogBenefits points={data.points} benefitPoint={benefit.points} />
+                          <DialogBenefits points={data.points} benefit={benefit} />
                         </td>
                       </tr>
                     ))}

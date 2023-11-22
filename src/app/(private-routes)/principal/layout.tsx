@@ -41,6 +41,9 @@ export default function Layout({ children }: LayoutProps) {
             <LinkCustomizavel href="/principal/produtos">
               Produtos
             </LinkCustomizavel>
+            <LinkCustomizavel href="/principal/beneficios">
+              Benefícios
+            </LinkCustomizavel>
           </div>
           <LogoutButton />
         </div>
