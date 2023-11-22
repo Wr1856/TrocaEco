@@ -17,12 +17,10 @@ export async function GET (req: NextRequest) {
           product: true
         }
       })
-      // const newProducts = products.map(product => {
-      //   return {
-      //     ...product.products[0]
-      //   }
-      // })
-      return NextResponse.json(products)
+
+      const newProducts = products.map(d => ({ ...d.product }))
+
+      return NextResponse.json(newProducts)
     }
     throw new Error('Usuário invalido')
   }
@@ -37,7 +35,7 @@ export async function POST (req: NextRequest) {
     const user = jwt.verify(accessToken, process.env.NEXTAUTH_SECRET!) as any
     const userExists = await prisma.user.findUnique({ where: { id: user.id }})
     if (userExists) {
-      const product = await prisma.userProduct.create({
+      const { product } = await prisma.userProduct.create({
         data: {
           ownerId: userExists.id,
           productId: data.productId
@@ -46,31 +44,15 @@ export async function POST (req: NextRequest) {
           product: true
         }
       })
-      // const userProducts = await prisma.userProduct.findMany({
-      //   where: {
-      //     ownerId: userExists.id
-      //   },
-      //   select: {
-      //     products: {
-      //       select: {
-      //         points: true
-      //       }
-      //     }
-      //   }
-      // })
-      // const points = userProducts.reduce((acc, cur) => {
-      //   acc += cur.products[0].points
-      //   return acc
-      // }, 0)
-      // const pointsUser = await prisma.points.findUnique({ where: { ownerId: userExists.id }}) 
-      // await prisma.points.update({
-      //   where: { ownerId: userExists.id },
-      //   data: {
-      //     amount: product.products[0].points + pointsUser?.amount!
-      //   }
-      // })
+      const pointsUser = await prisma.points.findUnique({ where: { ownerId: userExists.id }}) 
+      const res = await prisma.points.update({
+        where: { ownerId: userExists.id },
+        data: {
+          amount: product.points + pointsUser?.amount!
+        }
+      })
 
-      return NextResponse.json({ product })
+      return NextResponse.json(res)
     }
     throw new Error('Usuário invalido')
   }

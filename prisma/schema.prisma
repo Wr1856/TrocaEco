@@ -36,13 +36,14 @@ model Product {
 }
 
 model UserProduct {
+  id String @id @default(uuid())
+
   product Product @relation(fields: [productId], references: [id])
   owner   User    @relation(fields: [ownerId], references: [id])
 
   ownerId   String
   productId String
 
-  @@id([ownerId])
   @@map("users_products")
 }
 
@@ -56,13 +57,12 @@ model Benefit {
 }
 
 model UserBenefits {
+  id      String  @id @default(uuid())
   benefit Benefit @relation(fields: [benefitId], references: [id])
   owner   User    @relation(fields: [ownerId], references: [id])
 
   benefitId String
   ownerId   String
-
-  @@id([ownerId])
 }
 
 model Points {
