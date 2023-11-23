@@ -58,3 +58,5 @@ export async function POST (req: NextRequest) {
   }
   throw new Error('Token invalido')
 }
+
+export const revalidate = 60

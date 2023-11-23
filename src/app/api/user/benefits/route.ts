@@ -33,3 +33,5 @@ export async function GET (req: NextRequest) {
   }
   throw new Error('Token invalido')
 }
+
+export const revalidate = 60

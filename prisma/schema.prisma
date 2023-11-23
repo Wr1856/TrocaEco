@@ -61,8 +61,8 @@ model UserBenefits {
   benefit Benefit @relation(fields: [benefitId], references: [id])
   owner   User    @relation(fields: [ownerId], references: [id])
 
-  shipping Boolean
-  info     String
+  shipping Boolean @default(false)
+  info     String  @default("Aguardando atualizacao")
 
   benefitId String
   ownerId   String
