@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
         address,
         phoneNumber,
         password: criptoPassword,
-        Points: {
+        points: {
           create: {
             amount: 0
           }
