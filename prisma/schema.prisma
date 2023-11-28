@@ -17,6 +17,7 @@ model User {
   address     String
   email       String @unique
   password    String
+  virified    Boolean @default(false)
 
   userProducts UserProduct[]
   UserBenefits UserBenefits[]

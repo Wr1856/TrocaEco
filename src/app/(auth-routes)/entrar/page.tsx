@@ -16,7 +16,7 @@ import { api } from "@/lib/api";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { AsyncButton } from "@/components/async-button";
-
+ 
 export default function Entrar() {
   const [abrir, abrirPara] = useState(false);
   const [isLoading, setIsLoading] = useState(false)
@@ -28,6 +28,7 @@ export default function Entrar() {
     try {
       delete data.passwordConfirm
      const response = await api.post('/user/criar', data)
+     router.push('/validar')
     } catch (error) {
       alert(error)
     }
@@ -44,7 +45,8 @@ export default function Entrar() {
     })
 
     if (response?.error) {
-      console.log(response)
+      alert('Usuário ou senha invalido ou seu email nao ta verificado')
+      setIsLoading(false)
       return
     }
     setIsLoading(false)

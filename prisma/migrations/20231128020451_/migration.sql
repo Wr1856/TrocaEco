@@ -5,7 +5,8 @@ CREATE TABLE "users" (
     "phoneNumber" TEXT NOT NULL,
     "address" TEXT NOT NULL,
     "email" TEXT NOT NULL,
-    "password" TEXT NOT NULL
+    "password" TEXT NOT NULL,
+    "virified" BOOLEAN NOT NULL DEFAULT false
 );
 
 -- CreateTable
@@ -17,10 +18,9 @@ CREATE TABLE "products" (
 
 -- CreateTable
 CREATE TABLE "users_products" (
+    "id" TEXT NOT NULL PRIMARY KEY,
     "ownerId" TEXT NOT NULL,
     "productId" TEXT NOT NULL,
-
-    PRIMARY KEY ("ownerId", "productId"),
     CONSTRAINT "users_products_productId_fkey" FOREIGN KEY ("productId") REFERENCES "products" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT "users_products_ownerId_fkey" FOREIGN KEY ("ownerId") REFERENCES "users" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
@@ -34,10 +34,11 @@ CREATE TABLE "benefits" (
 
 -- CreateTable
 CREATE TABLE "UserBenefits" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "shipping" BOOLEAN NOT NULL DEFAULT false,
+    "info" TEXT NOT NULL DEFAULT 'Aguardando atualizacao',
     "benefitId" TEXT NOT NULL,
     "ownerId" TEXT NOT NULL,
-
-    PRIMARY KEY ("benefitId", "ownerId"),
     CONSTRAINT "UserBenefits_benefitId_fkey" FOREIGN KEY ("benefitId") REFERENCES "benefits" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT "UserBenefits_ownerId_fkey" FOREIGN KEY ("ownerId") REFERENCES "users" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );

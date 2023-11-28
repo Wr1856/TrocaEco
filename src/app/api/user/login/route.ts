@@ -19,6 +19,9 @@ export async function POST(req: NextRequest) {
     if (user) {
       const isValid = await bcrypt.compare(password, user?.password!)
       if (isValid) {
+        if (user.virified === false) {
+          throw new Error('Conta não verificada')
+        }
         const token = await jwt.sign({
           id: user.id,
           name: user.name,
@@ -35,6 +38,7 @@ export async function POST(req: NextRequest) {
           token
         })
       }
+
     }
 
     throw new Error('Senha errada')
