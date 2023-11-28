@@ -5,10 +5,16 @@ import Link from 'next/link'
 import { Github, Mail, Phone, } from 'lucide-react'
 import { api } from '@/lib/api'
 
+interface USER {
+  id:string
+  name:string
+  points:{amount:number}
+}
+
 export const metadata = { title: "EcoTroca - Sustentabilidade na Prática" }
 
 export default async function Home() {
-  const users = await api.get('/user')
+  const users = await api.get<USER[]>('/user')
   return (
     <>
       <div>
