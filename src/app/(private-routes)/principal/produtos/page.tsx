@@ -1,3 +1,4 @@
+'use client'
 import { Search } from 'lucide-react'
 import { getServerSession } from 'next-auth'
 
@@ -5,6 +6,7 @@ import { api } from '@/lib/api'
 import { DialogProducts } from '@/components/dialog-products'
 import { nextAuthOptions } from '@/app/api/auth/[...nextauth]/route'
 import { UserCard } from '@/components/user-card'
+import { useSession } from 'next-auth/react'
 
 interface Benefits {
   id: string
@@ -12,16 +14,12 @@ interface Benefits {
   points: number,
 }
 
-export const metadata = {
-  title: 'EcoTroca | Cadastro produtos'
-}
-
 export default async function Produtos() {
-  const session = await getServerSession(nextAuthOptions)
+  const session = useSession()
   const { data: products } = await api.get('/products') as { data: Benefits[] }
   const { data: userProducts } = await api.get('/user/products', {
     headers: {
-      Authorization: `Bearer ${session?.token}`
+      Authorization: `Bearer ${session?.data.token}`
     }
   }) as { data: Benefits[] }
   
