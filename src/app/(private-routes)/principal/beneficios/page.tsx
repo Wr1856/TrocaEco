@@ -1,5 +1,3 @@
-'use client '
-
 import { nextAuthOptions } from "@/app/api/auth/[...nextauth]/route"
 import { StateBenefit } from "@/components/state-benefit"
 import { api } from "@/lib/api"

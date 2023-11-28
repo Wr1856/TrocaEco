@@ -1,5 +1,3 @@
-'use client'
-
 import Image from 'next/image'
 import logo from "@/assets/logo.png"
 import hero from "@/assets/hero.png"
@@ -12,6 +10,8 @@ interface USER {
   name:string
   points:{amount:number}
 }
+
+export const metadata = { title: "EcoTroca - Sustentabilidade na Prática" }
 
 export default async function Home() {
   const users = await api.get<USER[]>('/user')
