@@ -93,40 +93,40 @@ export default async function Home() {
             <div className='pl-10 text-[#80BB2A] text-base' >
               TROCA DE PRODUTOS POR PONTOS:
 
-              <span className='font-semibold block'>1. Cadastro no EcoTroca:</span><span className='text-black'>
+              <span className='font-semibold '>1. Cadastro no EcoTroca:</span><span className='text-black'>
               - Crie uma conta no EcoTroca, clicando <Link href='/entrar'>AQUI!</Link>
               - Entre nela para acessar a pagina principal.</span>
 
-              <span className='font-semibold block'>2. Explorando a pagina principal:</span><span className='text-black'>
+              <span className='font-semibold '>2. Explorando a pagina principal:</span><span className='text-black'>
               - Navegue pelo pagina principal de produtos e benefícios disponíveis e utilizar pontos para troca.</span>
 
-              <span className='font-semibold block'>3. Escolha do Produto:</span><span className='text-black'>
+              <span className='font-semibold '>3. Escolha do Produto:</span><span className='text-black'>
               - Selecione o produtos que deseja cadastrar em troca de seus pontos.
               - Leia as informações sobre o produto e verifique a quantidade de pontos que receberá.</span>
 
-              <span className='font-semibold block'>4. Acúmulo de Pontos:</span><span className='text-black'>
+              <span className='font-semibold '>4. Acúmulo de Pontos:</span><span className='text-black'>
               - Realize o cadastro de produtos que contenham o selo verde.
               - Acompanhe o saldo de pontos em seu perfil.</span>
 
-              <span className='font-semibold block'>5. Recebimento do Ponto:</span><span className='text-black'>
+              <span className='font-semibold '>5. Recebimento do Ponto:</span><span className='text-black'>
               - Após a confirmação, aguarde o envio do pontos para o seu perfil.</span>
             </div>
-            <div className='pl-10 text-[#80BB2A] text-base block' >
+            <div className='pl-10 text-[#80BB2A] text-base ' >
               TROCA DE PONTOS POR BENEFÍCIOS:
 
-              <span className='font-semibold block'>1. Acúmulo Contínuo de Pontos:</span><span className='text-black'>
+              <span className='font-semibold '>1. Acúmulo Contínuo de Pontos:</span><span className='text-black'>
               - Continue adquirindo produtos com selo verde e cadastrando eles no site para acumular mais pontos ao longo do tempo.</span>
 
-              <span className='font-semibold block'>2. Explorando Benefícios:</span><span className='text-black'>
+              <span className='font-semibold '>2. Explorando Benefícios:</span><span className='text-black'>
               - Visite a seção de benefícios e descubra as opções disponíveis para resgate.</span>
 
-              <span className='font-semibold block'>3. Escolha do Benefício:</span><span className='text-black'>
+              <span className='font-semibold '>3. Escolha do Benefício:</span><span className='text-black'>
               - Escolha o benefício que deseja resgatar.</span>
 
-              <span className='font-semibold block'>4. Confirmação do Resgate:</span><span className='text-black'>
+              <span className='font-semibold '>4. Confirmação do Resgate:</span><span className='text-black'>
               - Confirme o resgate do benefício, garantindo que você atende aos requisitos necessários.</span>
 
-              <span className='font-semibold block'>5. Aproveite os Benefícios:</span><span className='text-black'>
+              <span className='font-semibold '>5. Aproveite os Benefícios:</span><span className='text-black'>
               - Desfrute dos benefícios resgatados, contribuindo para um estilo de vida mais sustentável e acessando oportunidades exclusivas na comunidade EcoTroca.</span>
             </div>
           </div>
